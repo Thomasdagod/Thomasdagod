@@ -1,0 +1,60 @@
+<!doctype>
+<html>
+<head>
+<title>Page1</title>
+<link rel="stylesheet" type="text/css" href="goh.css">
+</head>
+<body>
+<h1>Thus your destiny</h1>
+<nav>
+<ul>
+ <li><a href="Wutwut.html">Home</a></li>
+<li><a href="haha.html">Page 1</a></li>
+<li><a href="new2.html">Test yo luck</a></li>
+</ul>
+</nav>
+<div id="clear"></div>
+<div id="show"></div>
+<div id="js">
+<script>
+document.write("Hello World its me");
+var today=new Date();
+document.write('<br>');
+document.write(today);
+document.write('<br>');
+document.write(today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear());
+
+var rand=Math.random();
+var rand1=Math.floor(rand*5);
+document.write('<br>');
+document.write(rand);
+document.write('<br>');
+document.write(rand1);
+</script>
+</div>
+<form>
+<input id="name" placeholder="What art thy name?">
+<input id="city" placeholder="What town would thou desire to travel on?">
+<button id="button">Click me</button>
+</form>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#js").hide();
+	var fortune = [", You will be rich", ", You will be killed by a dragon", ", You will get lucky"] 
+	;
+	$("#button").click(function(event){
+	    event.preventDefault();
+		var rand=Math.random();
+        var rand1=Math.floor(rand*3);	 
+		var name = $("#name").val();
+		$("#js").html("Greetings "+name + fortune[rand1]);
+		$("#js").show();
+	});
+
+
+
+});
+</script> 
+</body>
+</html>
